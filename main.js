@@ -20,7 +20,7 @@ $(function () {
 
     connection.onopen = function () {
       console.log("connected")
-         document.getElementsByTagName('body')[0].innerHTML = "CONNECTED"; 
+         document.getElementsById('connectionStatus')[0].innerHTML = " CONNECTED"; 
          let utterance = new SpeechSynthesisUtterance("connected");
      synth.speak(utterance);
 
@@ -28,7 +28,7 @@ $(function () {
     };
     connection.onerror = function (error) {
           // just in there were some problems with connection...
-        document.getElementsByTagName('body')[0].innerHTML = "NOT CONNECTED"; 
+        document.getElementsById('connectionStatus')[0].innerHTML = "NOT CONNECTED"; 
          let utterance = new SpeechSynthesisUtterance("Can not connect");
      synth.speak(utterance);
 
@@ -40,11 +40,11 @@ $(function () {
           // we should make sure that the massage is not chunked or
           // otherwise damaged.
       console.log(message)
-      var order = JSON.parse(message.data).message
+      var order = message.data
       console.log(order)
       let utterance = new SpeechSynthesisUtterance(order);
      synth.speak(utterance);
-
+document.getElementsById('message')[0].innerHTML = order; 
       setInterval(function()
       {
         if (connection.readyState !== 1)
@@ -52,7 +52,7 @@ $(function () {
           $.notify("Can't connect to websocket server", "error");
           location.reload();
         }
-      }, 300000);
+      }, 30000);
 
     }
     }
