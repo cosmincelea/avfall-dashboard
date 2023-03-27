@@ -20,6 +20,7 @@ $(function () {
 
     connection.onopen = function () {
       console.log("connected")
+         document.getElementsByTagName('body')[0].innerHTML = "CONNECTED"; 
          let utterance = new SpeechSynthesisUtterance("connected");
      synth.speak(utterance);
 
@@ -27,6 +28,7 @@ $(function () {
     };
     connection.onerror = function (error) {
           // just in there were some problems with connection...
+        document.getElementsByTagName('body')[0].innerHTML = "NOT CONNECTED"; 
          let utterance = new SpeechSynthesisUtterance("Can not connect");
      synth.speak(utterance);
 
