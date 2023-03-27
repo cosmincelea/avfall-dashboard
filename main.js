@@ -49,7 +49,7 @@ document.getElementById('message').innerHTML = order;
       {
         if (connection.readyState !== 1)
         {
-          $.notify("Can't connect to websocket server", "error");
+         
           location.reload();
         }
       }, 30000);
