@@ -16,7 +16,7 @@ $(function () {
     // open connection
   function startConnection()
   {
-    var connection = new WebSocket('ws://20.235.109.47:1337//?token=hrzClientSocket');
+    var connection = new WebSocket('wss://avfall.herokuapp.com/');
 
     connection.onopen = function () {
       console.log("connected")
