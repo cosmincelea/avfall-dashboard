@@ -20,10 +20,15 @@ $(function () {
 
     connection.onopen = function () {
       console.log("connected")
+         let utterance = new SpeechSynthesisUtterance("connected");
+     synth.speak(utterance);
+
 
     };
     connection.onerror = function (error) {
           // just in there were some problems with connection...
+         let utterance = new SpeechSynthesisUtterance("Can not connect");
+     synth.speak(utterance);
 
     };
         // most important part - incoming messages
