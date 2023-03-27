@@ -20,7 +20,7 @@ $(function () {
 
     connection.onopen = function () {
       console.log("connected")
-         document.getElementById('connectionStatus')[0].innerHTML = " CONNECTED"; 
+         document.getElementById('connectionStatus').innerHTML = " CONNECTED"; 
          let utterance = new SpeechSynthesisUtterance("connected");
      synth.speak(utterance);
 
@@ -28,7 +28,7 @@ $(function () {
     };
     connection.onerror = function (error) {
           // just in there were some problems with connection...
-        document.getElementById('connectionStatus')[0].innerHTML = "NOT CONNECTED"; 
+        document.getElementById('connectionStatus').innerHTML = "NOT CONNECTED"; 
          let utterance = new SpeechSynthesisUtterance("Can not connect");
      synth.speak(utterance);
 
@@ -44,7 +44,7 @@ $(function () {
       console.log(order)
       let utterance = new SpeechSynthesisUtterance(order);
      synth.speak(utterance);
-document.getElementById('message')[0].innerHTML = order; 
+document.getElementById('message').innerHTML = order; 
       setInterval(function()
       {
         if (connection.readyState !== 1)
