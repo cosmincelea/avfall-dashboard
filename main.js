@@ -21,8 +21,8 @@ $(function () {
     connection.onopen = function () {
       console.log("connected")
          document.getElementById('connectionStatus').innerHTML = " CONNECTED"; 
-         let utterance = new SpeechSynthesisUtterance("connected");
-     synth.speak(utterance);
+//          let utterance = new SpeechSynthesisUtterance("connected");
+//          synth.speak(utterance);
 
 
     };
@@ -42,8 +42,10 @@ $(function () {
       console.log(message)
       var order = message.data
       console.log(order)
-      let utterance = new SpeechSynthesisUtterance(order);
-     synth.speak(utterance);
+      //let utterance = new SpeechSynthesisUtterance(order);
+     //synth.speak(utterance);
+        var audio = new Audio('audio_file.mp3');
+    audio.play();
 document.getElementById('message').innerHTML = order; 
       setInterval(function()
       {
