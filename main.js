@@ -44,7 +44,7 @@ $(function () {
       console.log(order)
       //let utterance = new SpeechSynthesisUtterance(order);
      //synth.speak(utterance);
-        var audio = new Audio('audio_file.mp3');
+        var audio = new Audio('audio2.mp3');
         audio.volume = 1;
     audio.play();
 document.getElementById('message').innerHTML = order; 
